@@ -1,0 +1,124 @@
+% Enumerate
+%\setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex,label=(\arabic*)}
+\setbeamertemplate{enumerate items}[circle]
+
+% \MakeOuterQuote{"}
+
+% Colors
+\definecolor{lightblue}{HTML}{009AD4}
+\definecolor{darkgreen}{HTML}{0D7103}
+\definecolor{lightgreen}{HTML}{68FF00}
+\definecolor{darkgreen}{HTML}{00D500}
+\definecolor{darkred}{HTML}{AF0B0B}
+\definecolor{lightred}{HTML}{FF5100}
+\definecolor{orange}{HTML}{FFE000}
+\definecolor{codeblue}{HTML}{FF0055}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codebeige}{HTML}{D4A000}
+\definecolor{codepink}{HTML}{FF0055}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\newcommand{\markred}[1]{\textcolor{lightred}{#1}}
+\newcommand{\markgreen}[1]{\textcolor{darkgreen}{#1}}
+\newcommand{\markorange}[1]{\textcolor{orange}{#1}}
+\newcommand{\markblue}[1]{\textcolor{lightblue}{#1}}
+
+% Inline images
+\newcommand{\inlineimgscale}{1.1}
+
+% X and check mark
+\newcommand{\cmark}{\markgreen{\ding{51}}}
+\newcommand{\xmark}{\markred{\ding{55}}}
+
+% Math
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\newcommand{\compl}[1]{#1^\complement}
+\newcommand{\mapping}[3]{#1:#2 \rightarrow #3}
+\newcommand{\mapto}[3]{#1:#2 \mapsto #3}
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+% TODO
+\newcommand{\todo}[1]{\textcolor{red}{(\noindent TODO: #1.)}}
+
+% Code
+\lstdefinestyle{python}{
+    language=Python,
+    basicstyle=\small\ttfamily\color{black}, % Standardschrift
+    tabsize=2, % Groesse von Tabs
+    extendedchars=true, %
+    breaklines=true, % Zeilen werden Umgebrochen
+    %keywordstyle=\color{red}\bfseries,
+    %keywordstyle=[1]\textbf, % Stil der Keywords
+    % keywordstyle=[2]\textbf, %
+    % keywordstyle=[3]\textbf, %
+    % keywordstyle=[4]\textbf, \sqrt{\sqrt{}} %
+    stringstyle=\color{codebeige}\ttfamily, % Farbe der String
+    showspaces=false, % Leerzeichen anzeigen ?
+    showtabs=true, % Tabs anzeigen ?
+    xleftmargin=17pt,
+    framexleftmargin=17pt,
+    framexrightmargin=5pt,
+    framexbottommargin=4pt,
+    commentstyle=\color{darkgreen},
+    % morecomment=[s][\color{green}]{#}{},
+    %backgroundcolor=\color{grey},
+    showstringspaces=false, % Leerzeichen in Strings anzeigen ?
+    %morekeywords={__global__} % CUDA specific keywords
+    morekeywords={False, None, True, and, as, assert, async, await, break, class, continue, def, del, elif, else, except, finally, for, from, global, if, import, in, is, lambda, nonlocal, not, or, pass, raise, return, try, while, with, yield}, % list your attributes here
+    keywordstyle=\color{codepink},
+    identifierstyle=\color{blue}
+}
+\lstdefinestyle{sharpc}{
+    language={csh},
+    basicstyle=\small\ttfamily\color{black}, % Standardschrift
+    tabsize=2, % Groesse von Tabs
+    extendedchars=true, %
+    breaklines=true, % Zeilen werden Umgebrochen
+    %keywordstyle=\color{red}\bfseries,
+    %keywordstyle=[1]\textbf, % Stil der Keywords
+    % keywordstyle=[2]\textbf, %
+    % keywordstyle=[3]\textbf, %
+    % keywordstyle=[4]\textbf, \sqrt{\sqrt{}} %
+    stringstyle=\color{blue}\ttfamily, % Farbe der String
+    showspaces=false, % Leerzeichen anzeigen ?
+    showtabs=true, % Tabs anzeigen ?
+    xleftmargin=17pt,
+    framexleftmargin=17pt,
+    framexrightmargin=5pt,
+    framexbottommargin=4pt,
+    commentstyle=\color{blue},
+    % morecomment=[s][\color{green}]{//}{},
+    %backgroundcolor=\color{grey},
+    showstringspaces=false, % Leerzeichen in Strings anzeigen ?
+    %morekeywords={__global__} % CUDA specific keywords
+    morekeywords={abstract, event, new, struct, as, explicit, null, switch, base, extern, object, this, bool, false, operator, throw, break, finally, out, true, byte, fixed, override, try, case, float, params, typeof, catch, for, private, uint, char, foreach, protected, ulong, checked, goto, public, unchecked, class, if, readonly, unsafe, const, implicit, ref, ushort, continue, in, return, using, decimal, int, sbyte, virtual, default, interface, sealed, volatile, delegate, internal, short, void, do, is, sizeof, while, double, lock, stackalloc, else, long, static, enum, namespace, string}, % list your attributes here
+    keywordstyle=\color{cyan},
+    identifierstyle=\color{red}
+}
+\lstdefinestyle{clang}{
+    basicstyle=\small\ttfamily\color{white},
+    language=C,
+    keywordstyle=\color{codeblue},
+    commentstyle=\color{codegreen},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codebeige},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    morekeywords={void,int,double,float,unsigned,if,else,\#include}
+    tabsize=0.5
+}
+\lstset{escapeinside={(*}{*)},style=clang}
+
+\newcommand{\hlcode}[1]{\colorbox{red}{#1}}
