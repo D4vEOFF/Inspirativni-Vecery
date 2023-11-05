@@ -1,0 +1,85 @@
+\section{Formát SVG}
+
+\begin{frame}[t,fragile]{Formát SVG}
+    \begin{itemize}
+        \item SVG -- Scalable Vector Graphics.
+        \item Celý obrázek složen ze základních útvarů:
+        \begin{itemize}
+            \item body, přímky, křivky, mnohoúhelníky.
+        \end{itemize}
+        \item Lze neomezeně škálovat \textbf{bez ztráty kvality}.
+        \item Je možné pracovat s každým objektem zvlášť.
+        \item Snadná generace pomocí programu.  
+        \item Nízká paměťová náročnost.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Formát SVG}
+    \begin{figure}[!htb]
+        \centering
+        \begin{minipage}{.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{image/logo.pdf}
+            \caption{Vektorové logo}
+            \label{fig:prob1_6_2}
+        \end{minipage}%
+        \begin{minipage}{.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{image/logo.png}
+            \caption{Rastrové logo}
+            \label{fig:prob1_6_1}
+        \end{minipage}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[t,fragile]{Formát SVG}
+    \begin{figure}[!htb]
+        \centering
+        \begin{minipage}{.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{image/logo-zoom.pdf}
+            \caption{Vektorové logo}
+            \label{fig:prob1_6_2}
+        \end{minipage}%
+        \begin{minipage}{.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{image/logo-zoom.png}
+            \caption{Rastrové logo}
+            \label{fig:prob1_6_1}
+        \end{minipage}
+    \end{figure}
+\end{frame}
+
+\subsection{Syntaxe}
+\begin{frame}[t,fragile]{Syntaxe}
+    \begin{itemize}
+        \item Jde o textový formát, přípona \texttt{.svg}.
+        \item Základní struktura může vypadat takto:
+    \end{itemize}
+    \begin{lstlisting}[language=XML]
+<svg width="..." height="...">
+    <!--Obsah-->
+</svg>
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[t,fragile]{Syntaxe}{Základní objekty}
+    \begin{itemize}
+        \item Obdélník:
+        \begin{lstlisting}[language=XML]
+<rect width="..." height="...">
+        \end{lstlisting}
+        \item Kruh:
+        \begin{lstlisting}[language=XML]
+<circle cx="..." cy="..." r="...">
+        \end{lstlisting}
+        \item Elipsa:
+        \begin{lstlisting}[language=XML]
+<ellipse cx="..." cy="..." rx="..." ry="...">
+        \end{lstlisting}
+        \item Čára:
+        \begin{lstlisting}[language=XML]
+<line x1="..." y1="..." x2="..." y2="...">
+        \end{lstlisting}
+    \end{itemize}
+\end{frame}
