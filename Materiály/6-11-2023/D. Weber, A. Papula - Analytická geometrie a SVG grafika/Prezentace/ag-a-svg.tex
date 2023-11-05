@@ -6,43 +6,36 @@
 \input{assets/theme.tex}
 
 % Title page
-\input{titlepage.tex}
+\input{components/titlepage.tex}
 
 \begin{document}
 
     \maketitle
 
     \begin{frame}[t]{Obsah}
-        \begin{enumerate}
-            \item Co známe z analytické geometrie\dots
-            \begin{enumerate}
-                \item Lineární zobrazení (homomorfismus)
-                \item Afinní zobrazení
-                \item Některá afinní zobrazení a jejich vyjádření
-            \end{enumerate}
-            \item Vektorová grafika
-            \begin{enumerate}
-                \item Co je vektorová grafika
-                \item Rozdíl mezi vektorovou a rastrovou grafikou
-            \end{enumerate}
-            \item Formát SVG
-            \begin{enumerate}
-                \item \todo{doplnit obsah k SVG}
-            \end{enumerate}
-        \end{enumerate}
+        \tableofcontents
     \end{frame}
 
-    \section{Analytická geometrie}
+    % \begin{frame}[t]{Obsah}
+    %     \begin{enumerate}
+    %         \item Co známe z analytické geometrie\dots
+    %         \begin{enumerate}
+    %             \item Lineární zobrazení (homomorfismus)
+    %             \item Afinní zobrazení
+    %             \item Některá afinní zobrazení a jejich vyjádření
+    %         \end{enumerate}
+    %         \item Vektorová grafika
+    %         \begin{enumerate}
+    %             \item Co je vektorová grafika
+    %             \item Rozdíl mezi vektorovou a rastrovou grafikou
+    %         \end{enumerate}
+    %         \item Formát SVG
+    %         \begin{enumerate}
+    %             \item \todo{doplnit obsah k SVG}
+    %         \end{enumerate}
+    %     \end{enumerate}
+    % \end{frame}
 
-    \begin{frame}[t]{Lineární zobrazení}
-        \begin{block}{Definice homomorfismu}
-            Jsou-li $U,V$ vektorové prostory nad tělesem $T$, pak zobrazení $\mapping{f}{U}{V}$ je \emph{lineární (homomorfismus)}, pokud platí
-            \begin{enumerate}[I]
-                \item \(\forall x,y\in U:\,f(x+y)=f(x)+f(y),\)
-                \item \(\forall x\in V,\forall \alpha\in T:\,f(\alpha x)=\alpha\cdot f(x).\)
-            \end{enumerate}
-        \end{block}
-        Nás bude zajímat především prostor $\R^2$, nebot' budeme pracovat s rovinou $\implies U=V=\R^2$.
-    \end{frame}
+    \include{components/analyticka-geometrie.tex}
 
 \end{document}
