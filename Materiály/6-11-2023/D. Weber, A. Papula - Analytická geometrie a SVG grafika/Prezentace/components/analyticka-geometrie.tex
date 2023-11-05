@@ -329,7 +329,142 @@
 
 \subsection{Afinní zobrazení}
 \begin{frame}[t]{Afinní zobrazení}
-    \begin{block}{Defininice afinního zobrazení}
-        \todo{doplnit}
-    \end{block}
+    \only<1->{
+        \begin{block}{Defininice afinního zobrazení}
+            Buď $\mapping{g}{U}{V}$ homomorfismus a $b\in V$ vektor. Pak \emph{afinní zobrazení} $\mapping{f}{U}{V}$ má tvar $f(x)=g(x)+b$, kde $x\in U$.
+        \end{block}
+    }
+    \only<2->{
+        Afinní zobrazení $f$ lze tedy zapsat ve tvaru
+    \[f(x)=Ax+b,\]
+    kde $A$ je matice homomorfismu $g$.
+    }
+\end{frame}
+
+\begin{frame}{Příklad}
+    \definecolor{ffqqqq}{rgb}{1.,0.,0.}
+    \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+    \definecolor{ttttff}{rgb}{0.2,0.2,1.}
+    \definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+    \only<1>{
+        \begin{minipage}{0.3\textwidth}
+            Afinní zobrazení dané maticí
+            \[A=\left(\begin{matrix}
+                2 & 0\\
+                0 & 1{,}5
+            \end{matrix}\right)\]
+            a vektorem
+            \[b=\left(\begin{matrix}
+                -5\\
+                1
+            \end{matrix}\right)\]
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.68\textwidth}
+            \begin{figure}[h]
+                \centering
+                \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+                \begin{axis}[
+                x=1.25cm,y=1.25cm,
+                axis lines=middle,
+                ymajorgrids=false,
+                xmajorgrids=false,
+                xmin=-3.5,
+                xmax=3.5,
+                ymin=-0.5,
+                ymax=4.5,
+                xtick={-3.0,-2.0,...,3.0},
+                ytick={-0.0,1.0,...,4.0},]
+                \clip(-3.5,-0.5) rectangle (3.5,4.5);
+                \fill[line width=2.pt,color=ttttff,fill=ttttff,fill opacity=0.10000000149011612] (1.,1.) -- (1.,2.) -- (3.,1.) -- (2.,0.) -- cycle;
+                \fill[line width=2.pt,color=ffqqqq,fill=ffqqqq,fill opacity=0.10000000149011612] (-3.,2.5) -- (-3.,4.) -- (1.,2.5) -- (-1.,1.) -- cycle;
+                \draw[line width=4.pt] (-9.222838137472275,13.544878048780493) -- (-5.675166297117511,13.544878048780493);
+                \draw[line width=4.pt] (-9.222838137472275,12.83534368070954) -- (-5.675166297117511,12.83534368070954);
+                \draw[line width=4.pt] (-9.222838137472275,12.125809312638586) -- (-5.675166297117511,12.125809312638586);
+                \draw[line width=4.pt] (-9.222838137472275,11.41627494456763) -- (-5.675166297117511,11.41627494456763);
+                \draw[line width=4.pt] (-9.222838137472275,13.544878048780493) -- (-5.675166297117511,13.544878048780493);
+                \draw[line width=4.pt] (-9.222838137472275,12.83534368070954) -- (-5.675166297117511,12.83534368070954);
+                \draw[line width=4.pt] (-9.222838137472275,12.125809312638586) -- (-5.675166297117511,12.125809312638586);
+                \draw[line width=4.pt] (-9.222838137472275,11.41627494456763) -- (-5.675166297117511,11.41627494456763);
+                \draw[line width=4.pt] (-9.222838137472275,10.706740576496678) -- (-5.675166297117511,10.706740576496678);
+                \draw[line width=4.pt] (-9.222838137472275,9.997206208425723) -- (-5.675166297117511,9.997206208425723);
+                \draw [line width=2.pt,color=ttttff] (1.,1.)-- (1.,2.);
+                \draw [line width=2.pt,color=ttttff] (1.,2.)-- (3.,1.);
+                \draw [line width=2.pt,color=ttttff] (3.,1.)-- (2.,0.);
+                \draw [line width=2.pt,color=ttttff] (2.,0.)-- (1.,1.);
+                \draw [line width=2.pt,color=ffqqqq] (-3.,2.5)-- (-3.,4.);
+                \draw [line width=2.pt,color=ffqqqq] (-3.,4.)-- (1.,2.5);
+                \draw [line width=2.pt,color=ffqqqq] (1.,2.5)-- (-1.,1.);
+                \draw [line width=2.pt,color=ffqqqq] (-1.,1.)-- (-3.,2.5);
+                \begin{scriptsize}
+                \draw [fill=ududff] (1.,1.) circle (2.5pt);
+                \draw[color=ududff] (1.1186252771618614,1.3320177383592) node {$B$};
+                \draw [fill=ududff] (1.,2.) circle (2.5pt);
+                \draw[color=ududff] (1.1186252771618614,2.3253658536585355) node {$C$};
+                \draw [fill=ududff] (3.,1.) circle (2.5pt);
+                \draw[color=ududff] (3.123059866962303,1.3320177383592) node {$D$};
+                \draw [fill=ududff] (2.,0.) circle (2.5pt);
+                \draw[color=ududff] (2.129711751662969,0.3209312638580908) node {$E$};
+                \draw [fill=uuuuuu] (-3.,2.5) circle (2.0pt);
+                \draw[color=uuuuuu] (-2.8725055432372475,2.7865631929046555) node {$F$};
+                \draw [fill=uuuuuu] (-3.,4.) circle (2.0pt);
+                \draw[color=uuuuuu] (-2.8725055432372475,4.294323725055433) node {$G$};
+                \draw [fill=uuuuuu] (1.,2.5) circle (2.0pt);
+                \draw[color=uuuuuu] (1.1186252771618614,2.7865631929046555) node {$H$};
+                \draw [fill=uuuuuu] (-1.,1.) circle (2.0pt);
+                \draw[color=uuuuuu] (-0.8680709534368063,1.2965410199556524) node {$I$};
+                \end{scriptsize}
+                \end{axis}
+                \end{tikzpicture}
+            \end{figure}
+        \end{minipage}
+    }
+\end{frame}
+
+\subsection{Homogenní souřadnice}
+\begin{frame}[t]{Homogenní souřadnice}
+    \only<2->{
+        \begin{itemize}
+            \only<2->{\item Lze využít tzv. \textbf{homogenních souřadnic} $\implies$ rozšíříme prostor o jednu dimenzi.}
+            \only<3->{\item Obecný vektor $u=\T{(u_1,u_2)}\in \R^2$ zapíšeme jako $\T{(u_1,u_2,1)}$}
+            \only<4->{\item Díky tomu můžeme posunutí o vektor $b$ v daném afinním zobrazení $f$ zapsat jako \emph{pouhé} násobení matice s vektorem:}
+            \only<5->{
+                \[\left(\begin{matrix}
+                    x_1^\prime\\
+                    x_2^\prime\\
+                    1
+                \end{matrix}\right)=\only<5>{\left(\begin{matrix}
+                    a_{11} & a_{21} & b_1\\
+                    a_{12} & a_{22} & b_2\\
+                    0 & 0 & 1
+                \end{matrix}\right)}\only<6->{\underbrace{\left(\begin{matrix}
+                    a_{11} & a_{21} & b_1\\
+                    a_{12} & a_{22} & b_2\\
+                    0 & 0 & 1
+                \end{matrix}\right)}_{\text{Afinní matice}}}\cdot\left(\begin{matrix}
+                    x_1\\
+                    x_2\\
+                    1
+                \end{matrix}\right).\]
+            }
+            \only<7->{\item To odpovídá původnímu zápisu
+            \[f(x)=\left(\begin{matrix}
+                x_1^\prime\\
+                x_2^\prime
+            \end{matrix}\right)=Ax+b\]}
+        \end{itemize}
+    }
+\end{frame}
+
+\subsection{Některá afinní zobrazení}
+\begin{frame}[t]{Translace}
+    \begin{itemize}
+        \item Afinní matice translace $T$ o vektor $t=\T{(t_x,t_y)}$
+        \[\mathcal{T}_b(x)=\left(\begin{matrix}
+            1 & 0 & t_x\\
+            0 & 1 & t_y\\
+            0 & 0 & 1
+        \end{matrix}\right)\]
+        \item Odpovídá zobrazení $T(x)=x+b$.
+    \end{itemize}
 \end{frame}
