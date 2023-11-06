@@ -557,23 +557,23 @@
 \end{frame}
 
 \begin{frame}{Příklad rotace}
-    \begin{minipage}{0.4\textwidth}
+    \begin{minipage}{0.5\textwidth}
         Rotace o úhel $\alpha=2\pi/3$.
         \[\mathcal{R}\left(\dfrac{2\pi}{3}\right)=\left(\begin{matrix}
-            \cos\dfrac{2\pi}{3} & -\sin\dfrac{2\pi}{3} & 0\\
-            \sin\dfrac{2\pi}{3} & \cos\dfrac{2\pi}{3} & 0\\
+            \cos2\pi/3 & -\sin2\pi/3 & 0\\
+            \sin2\pi/3 & \cos2\pi/3 & 0\\
             0 & 0 & 1
         \end{matrix}\right)\]
     \end{minipage}
     \hfill
-    \begin{minipage}{0.58\textwidth}
+    \begin{minipage}{0.48\textwidth}
         \definecolor{ffqqqq}{rgb}{1.,0.,0.}
         \definecolor{ttttff}{rgb}{0.2,0.2,1.}
         \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
         \definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
         \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
             \begin{axis}[
-            x=.8cm,y=.8cm,
+            x=.7cm,y=.7cm,
             axis lines=middle,
             ymajorgrids=false,
             xmajorgrids=false,
@@ -639,8 +639,8 @@
 \begin{frame}{Příklad horizontálního zkosení}
     \begin{minipage}{0.4\textwidth}
         Horizontální zkosení o úhel $\alpha=\pi/6$.
-        \[\mathcal{SK}\left(\dfrac{\pi}{6}\right)=\left(\begin{matrix}
-            1 & \tg{\dfrac{\pi}{6}} & 0\\
+        \[\mathcal{SK}\left(\pi/6\right)=\left(\begin{matrix}
+            1 & \tg{\pi/6} & 0\\
             0 & 1 & 0\\
             0 & 0 & 1
         \end{matrix}\right).\]
