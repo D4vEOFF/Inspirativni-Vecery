@@ -57,8 +57,9 @@
         \item Základní struktura může vypadat takto:
     \end{itemize}
     \begin{lstlisting}[language=XML]
-<svg width="100" height="100">
-    <!--Obsah-->
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
+    ...
 </svg>
     \end{lstlisting}
 \end{frame}
@@ -158,9 +159,9 @@
     transform="rotate(-45,5,5)"/>
 
 <rect x="0" y="10" width="10" height="10" 
-    transform="matrix(0.7071, -0.7071, 0.7071, 0.7071, 0, 0)"/>
+    transform="matrix(0.7071,-0.7071,0.7071,0.7071,0,0)"/>
 <rect x="0" y="10" width="10" height="10" 
-    transform="matrix(0.7071, -0.7071, 0.7071, 0.7071, 0, 0)"/>
+    transform="matrix(0.7071,-0.7071,0.7071,0.7071,0,0)"/>
     \end{lstlisting}
 \end{frame}
 

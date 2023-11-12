@@ -329,7 +329,406 @@
 
 \subsection{Afinní zobrazení}
 \begin{frame}[t]{Afinní zobrazení}
-    \begin{block}{Defininice afinního zobrazení}
-        \todo{doplnit}
-    \end{block}
+    \only<1->{
+        \begin{block}{Defininice afinního zobrazení}
+            Buď $\mapping{g}{U}{V}$ homomorfismus a $b\in V$ vektor. Pak \emph{afinní zobrazení} $\mapping{f}{U}{V}$ má tvar $f(x)=g(x)+b$, kde $x\in U$.
+        \end{block}
+    }
+    \only<2->{
+        Afinní zobrazení $f$ lze tedy zapsat ve tvaru
+    \[f(x)=Ax+b,\]
+    kde $A$ je matice homomorfismu $g$.
+    }
+\end{frame}
+
+\begin{frame}{Příklad afinního zobrazení}
+    \definecolor{ffqqqq}{rgb}{1.,0.,0.}
+    \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+    \definecolor{ttttff}{rgb}{0.2,0.2,1.}
+    \definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+    \only<1>{
+        \begin{minipage}{0.3\textwidth}
+            Afinní zobrazení dané maticí
+            \[A=\left(\begin{matrix}
+                2 & 0\\
+                0 & 1{,}5
+            \end{matrix}\right)\]
+            a vektorem
+            \[b=\left(\begin{matrix}
+                -5\\
+                1
+            \end{matrix}\right)\]
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.68\textwidth}
+            \begin{figure}[h]
+                \centering
+                \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+                \begin{axis}[
+                x=1.25cm,y=1.25cm,
+                axis lines=middle,
+                ymajorgrids=false,
+                xmajorgrids=false,
+                xmin=-3.5,
+                xmax=3.5,
+                ymin=-0.5,
+                ymax=4.5,
+                xtick={-3.0,-2.0,...,3.0},
+                ytick={-0.0,1.0,...,4.0},]
+                \clip(-3.5,-0.5) rectangle (3.5,4.5);
+                \fill[line width=2.pt,color=ttttff,fill=ttttff,fill opacity=0.10000000149011612] (1.,1.) -- (1.,2.) -- (3.,1.) -- (2.,0.) -- cycle;
+                \fill[line width=2.pt,color=ffqqqq,fill=ffqqqq,fill opacity=0.10000000149011612] (-3.,2.5) -- (-3.,4.) -- (1.,2.5) -- (-1.,1.) -- cycle;
+                \draw[line width=4.pt] (-9.222838137472275,13.544878048780493) -- (-5.675166297117511,13.544878048780493);
+                \draw[line width=4.pt] (-9.222838137472275,12.83534368070954) -- (-5.675166297117511,12.83534368070954);
+                \draw[line width=4.pt] (-9.222838137472275,12.125809312638586) -- (-5.675166297117511,12.125809312638586);
+                \draw[line width=4.pt] (-9.222838137472275,11.41627494456763) -- (-5.675166297117511,11.41627494456763);
+                \draw[line width=4.pt] (-9.222838137472275,13.544878048780493) -- (-5.675166297117511,13.544878048780493);
+                \draw[line width=4.pt] (-9.222838137472275,12.83534368070954) -- (-5.675166297117511,12.83534368070954);
+                \draw[line width=4.pt] (-9.222838137472275,12.125809312638586) -- (-5.675166297117511,12.125809312638586);
+                \draw[line width=4.pt] (-9.222838137472275,11.41627494456763) -- (-5.675166297117511,11.41627494456763);
+                \draw[line width=4.pt] (-9.222838137472275,10.706740576496678) -- (-5.675166297117511,10.706740576496678);
+                \draw[line width=4.pt] (-9.222838137472275,9.997206208425723) -- (-5.675166297117511,9.997206208425723);
+                \draw [line width=2.pt,color=ttttff] (1.,1.)-- (1.,2.);
+                \draw [line width=2.pt,color=ttttff] (1.,2.)-- (3.,1.);
+                \draw [line width=2.pt,color=ttttff] (3.,1.)-- (2.,0.);
+                \draw [line width=2.pt,color=ttttff] (2.,0.)-- (1.,1.);
+                \draw [line width=2.pt,color=ffqqqq] (-3.,2.5)-- (-3.,4.);
+                \draw [line width=2.pt,color=ffqqqq] (-3.,4.)-- (1.,2.5);
+                \draw [line width=2.pt,color=ffqqqq] (1.,2.5)-- (-1.,1.);
+                \draw [line width=2.pt,color=ffqqqq] (-1.,1.)-- (-3.,2.5);
+                \begin{scriptsize}
+                \draw [fill=ududff] (1.,1.) circle (2.5pt);
+                \draw[color=ududff] (1.1186252771618614,1.3320177383592) node {$B$};
+                \draw [fill=ududff] (1.,2.) circle (2.5pt);
+                \draw[color=ududff] (1.1186252771618614,2.3253658536585355) node {$C$};
+                \draw [fill=ududff] (3.,1.) circle (2.5pt);
+                \draw[color=ududff] (3.123059866962303,1.3320177383592) node {$D$};
+                \draw [fill=ududff] (2.,0.) circle (2.5pt);
+                \draw[color=ududff] (2.129711751662969,0.3209312638580908) node {$E$};
+                \draw [fill=uuuuuu] (-3.,2.5) circle (2.0pt);
+                \draw[color=uuuuuu] (-2.8725055432372475,2.7865631929046555) node {$F$};
+                \draw [fill=uuuuuu] (-3.,4.) circle (2.0pt);
+                \draw[color=uuuuuu] (-2.8725055432372475,4.294323725055433) node {$G$};
+                \draw [fill=uuuuuu] (1.,2.5) circle (2.0pt);
+                \draw[color=uuuuuu] (1.1186252771618614,2.7865631929046555) node {$H$};
+                \draw [fill=uuuuuu] (-1.,1.) circle (2.0pt);
+                \draw[color=uuuuuu] (-0.8680709534368063,1.2965410199556524) node {$I$};
+                \end{scriptsize}
+                \end{axis}
+                \end{tikzpicture}
+            \end{figure}
+        \end{minipage}
+    }
+\end{frame}
+
+\subsection{Homogenní souřadnice}
+\begin{frame}[t]{Homogenní souřadnice}
+    \only<2->{
+        \begin{itemize}
+            \only<2->{\item Lze využít tzv. \textbf{homogenních souřadnic} $\implies$ rozšíříme prostor o jednu dimenzi.}
+            \only<3->{\item Obecný vektor $u=\T{(u_1,u_2)}\in \R^2$ zapíšeme jako $\T{(u_1,u_2,1)}$}
+            \only<4->{\item Díky tomu můžeme posunutí o vektor $b$ v daném afinním zobrazení $f$ zapsat jako \emph{pouhé} násobení matice s vektorem:}
+            \only<5->{
+                \[\left(\begin{matrix}
+                    x_1^\prime\\
+                    x_2^\prime\\
+                    1
+                \end{matrix}\right)=\only<5>{\left(\begin{matrix}
+                    a_{11} & a_{21} & b_1\\
+                    a_{12} & a_{22} & b_2\\
+                    0 & 0 & 1
+                \end{matrix}\right)}\only<6->{\underbrace{\left(\begin{matrix}
+                    a_{11} & a_{21} & b_1\\
+                    a_{12} & a_{22} & b_2\\
+                    0 & 0 & 1
+                \end{matrix}\right)}_{\text{Afinní matice}}}\cdot\left(\begin{matrix}
+                    x_1\\
+                    x_2\\
+                    1
+                \end{matrix}\right).\]
+            }
+            \only<7->{\item To odpovídá původnímu zápisu
+            \[f(x)=\left(\begin{matrix}
+                x_1^\prime\\
+                x_2^\prime
+            \end{matrix}\right)=Ax+b\]}
+        \end{itemize}
+    }
+\end{frame}
+
+\subsection{Některá afinní zobrazení}
+
+\subsubsection{Translace}
+\begin{frame}[t]{Translace}
+    \begin{itemize}
+        \item Afinní matice translace $t$ o vektor $t=\T{(b_1,b_2)}$
+        \[\mathcal{T}(b)=\left(\begin{matrix}
+            1 & 0 & b_1\\
+            0 & 1 & b_2\\
+            0 & 0 & 1
+        \end{matrix}\right)\]
+        \item Odpovídá zobrazení $t(x)=x+b$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Příklad translace}
+    \begin{minipage}{0.4\textwidth}
+        Posunutí o vektor\\$u=\T{(2,1)}$
+        \[\mathcal{T}(u)=\left(\begin{matrix}
+            1 & 0 & 2\\
+            0 & 1 & 1\\
+            0 & 0 & 1
+        \end{matrix}\right)\]
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.58\textwidth}
+        \definecolor{ffqqqq}{rgb}{1.,0.,0.}
+        \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+        \definecolor{ttttff}{rgb}{0.2,0.2,1.}
+        \definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+        \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+            \begin{axis}[
+            x=1.7cm,y=1.7cm,
+            axis lines=middle,
+            ymajorgrids=false,
+            xmajorgrids=false,
+            xmin=-0.25,
+            xmax=4.75,
+            ymin=-0.25,
+            ymax=2.75,
+            xtick={-0.0,0.5,...,4.5},
+            ytick={-0.0,0.5,...,2.5},]
+            \clip(-0.25,-0.25) rectangle (4.75,2.75);
+            \fill[line width=2.pt,color=ttttff,fill=ttttff,fill opacity=0.10000000149011612] (1.,1.5) -- (0.5,1.) -- (1.0634130290423136,-0.0242268727331826) -- (2.,0.5) -- (2.5,1.) -- cycle;
+            \fill[line width=2.pt,color=ffqqqq,fill=ffqqqq,fill opacity=0.10000000149011612] (3.,2.5) -- (2.5,2.) -- (3.0634130290423136,0.9757731272668174) -- (4.,1.5) -- (4.5,2.) -- cycle;
+            \draw [line width=2.pt,color=ttttff] (1.,1.5)-- (0.5,1.);
+            \draw [line width=2.pt,color=ttttff] (0.5,1.)-- (1.0634130290423136,-0.0242268727331826);
+            \draw [line width=2.pt,color=ttttff] (1.0634130290423136,-0.0242268727331826)-- (2.,0.5);
+            \draw [line width=2.pt,color=ttttff] (2.,0.5)-- (2.5,1.);
+            \draw [line width=2.pt,color=ttttff] (2.5,1.)-- (1.,1.5);
+            \draw [line width=2.pt,color=ffqqqq] (3.,2.5)-- (2.5,2.);
+            \draw [line width=2.pt,color=ffqqqq] (2.5,2.)-- (3.0634130290423136,0.9757731272668174);
+            \draw [line width=2.pt,color=ffqqqq] (3.0634130290423136,0.9757731272668174)-- (4.,1.5);
+            \draw [line width=2.pt,color=ffqqqq] (4.,1.5)-- (4.5,2.);
+            \draw [line width=2.pt,color=ffqqqq] (4.5,2.)-- (3.,2.5);
+            \draw [->,line width=2.pt] (1.,1.5) -- (3.,2.5);
+            \begin{scriptsize}
+            \draw [fill=ududff] (1.,1.5) circle (2.5pt);
+            \draw[color=ududff] (1.0647317909384804,1.6653025400831583) node {$A$};
+            \draw [fill=ududff] (0.5,1.) circle (2.5pt);
+            \draw[color=ududff] (0.5670087387790854,1.1675794879237649) node {$B$};
+            \draw [fill=ududff] (1.0634130290423136,-0.0242268727331826) circle (2.5pt);
+            \draw[color=ududff] (1.1280783612133125,0.14498485348719353) node {$C$};
+            \draw [fill=ududff] (2.,0.5) circle (2.5pt);
+            \draw[color=ududff] (2.0601778952572705,0.6698564357643718) node {$D$};
+            \draw [fill=ududff] (2.5,1.) circle (2.5pt);
+            \draw[color=ududff] (2.566950457455927,1.1675794879237649) node {$E$};
+            \draw [fill=uuuuuu] (3.,2.5) circle (2.0pt);
+            \draw[color=uuuuuu] (3.064673509615322,2.651699134362683) node {$F$};
+            \draw [fill=uuuuuu] (2.5,2.) circle (2.0pt);
+            \draw[color=uuuuuu] (2.566950457455927,2.144926572164028) node {$G$};
+            \draw [fill=uuuuuu] (3.0634130290423136,0.9757731272668174) circle (2.0pt);
+            \draw[color=uuuuuu] (3.1280200798901543,1.1223319377274565) node {$H$};
+            \draw [fill=uuuuuu] (4.,1.5) circle (2.0pt);
+            \draw[color=uuuuuu] (4.060119613934113,1.6472035200046347) node {$I$};
+            \draw [fill=uuuuuu] (4.5,2.) circle (2.0pt);
+            \draw[color=uuuuuu] (4.566892176132769,2.144926572164028) node {$J$};
+            \draw[color=black] (2.0058808350217,2.117778042046243) node {$u$};
+            \end{scriptsize}
+            \end{axis}
+        \end{tikzpicture}
+    \end{minipage}
+\end{frame}
+
+\subsubsection{Rotace}
+\begin{frame}[t]{Rotace}
+    \begin{itemize}
+        \item Afinní matice rotace o pevný úhel $\varphi$ \textbf{okolo počátku}:
+        \[\mathcal{R}(\varphi)=\left(\begin{matrix}
+            \cos\varphi & -\sin\varphi & 0\\
+            \sin\varphi & \cos\varphi & 0\\
+            0 & 0 & 1
+        \end{matrix}\right)\]
+        \item Odpovídá zobrazení $r(x)=\left(\begin{matrix}
+            \cos\varphi & -\sin\varphi\\
+            \sin\varphi & \cos\varphi
+        \end{matrix}\right)x$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Příklad rotace}
+    \begin{minipage}{0.5\textwidth}
+        Rotace o úhel $\alpha=2\pi/3$.
+        \[\mathcal{R}\left(\dfrac{2\pi}{3}\right)=\left(\begin{matrix}
+            \cos2\pi/3 & -\sin2\pi/3 & 0\\
+            \sin2\pi/3 & \cos2\pi/3 & 0\\
+            0 & 0 & 1
+        \end{matrix}\right)\]
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \definecolor{ffqqqq}{rgb}{1.,0.,0.}
+        \definecolor{ttttff}{rgb}{0.2,0.2,1.}
+        \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+        \definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+        \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+            \begin{axis}[
+            x=.7cm,y=.7cm,
+            axis lines=middle,
+            ymajorgrids=false,
+            xmajorgrids=false,
+            xmin=-5.0,
+            xmax=4.5,
+            ymin=-1.5,
+            ymax=5.5,
+            xtick={-5.0,-4.0,...,4.0},
+            ytick={-1.0,0.0,...,5.0},]
+            \clip(-5.,-1.5) rectangle (4.5,5.5);
+            \fill[line width=2.pt,color=ttttff,fill=ttttff,fill opacity=0.10000000149011612] (1.,1.) -- (2.,-1.) -- (3.,0.) -- (4.,-1.) -- (4.,3.) -- cycle;
+            \fill[line width=2.pt,color=ffqqqq,fill=ffqqqq,fill opacity=0.10000000149011612] (-1.3660254037844384,0.36602540378443893) -- (-0.13397459621556085,2.232050807568877) -- (-1.5,2.598076211353316) -- (-1.1339745962155603,3.9641016151377544) -- (-4.598076211353315,1.9641016151377555) -- cycle;
+            \draw[line width=4.pt] (-9.16459552396786,7.01471836136686) -- (-6.9259035939507765,7.01471836136686);
+            \draw [line width=2.pt,color=ttttff] (1.,1.)-- (2.,-1.);
+            \draw [line width=2.pt,color=ttttff] (2.,-1.)-- (3.,0.);
+            \draw [line width=2.pt,color=ttttff] (3.,0.)-- (4.,-1.);
+            \draw [line width=2.pt,color=ttttff] (4.,-1.)-- (4.,3.);
+            \draw [line width=2.pt,color=ttttff] (4.,3.)-- (1.,1.);
+            \draw [line width=2.pt,color=ffqqqq] (-1.3660254037844384,0.36602540378443893)-- (-0.13397459621556085,2.232050807568877);
+            \draw [line width=2.pt,color=ffqqqq] (-0.13397459621556085,2.232050807568877)-- (-1.5,2.598076211353316);
+            \draw [line width=2.pt,color=ffqqqq] (-1.5,2.598076211353316)-- (-1.1339745962155603,3.9641016151377544);
+            \draw [line width=2.pt,color=ffqqqq] (-1.1339745962155603,3.9641016151377544)-- (-4.598076211353315,1.9641016151377555);
+            \draw [line width=2.pt,color=ffqqqq] (-4.598076211353315,1.9641016151377555)-- (-1.3660254037844384,0.36602540378443893);
+            \begin{scriptsize}
+            \draw [fill=black] (-7.29901891562029,7.01471836136686) circle (2.5pt);
+            \draw[color=black] (-7.116192408002229,7.277764663143868) node {$phi = 120$};
+            \draw [fill=ududff] (1.,1.) circle (2.5pt);
+            \draw[color=ududff] (1.0774200558602949,1.210909532797579) node {$B$};
+            \draw [fill=ududff] (2.,-1.) circle (2.5pt);
+            \draw[color=ududff] (2.073637964717897,-0.7927197445677083) node {$C$};
+            \draw [fill=xdxdff] (3.,0.) circle (2.5pt);
+            \draw[color=xdxdff] (3.081049333225584,0.2034981642898926) node {$D$};
+            \draw [fill=ududff] (4.,-1.) circle (2.5pt);
+            \draw[color=ududff] (4.077267242083186,-0.7927197445677083) node {$E$};
+            \draw [fill=ududff] (4.,3.) circle (2.5pt);
+            \draw[color=ududff] (4.077267242083186,3.2033453505127807) node {$F$};
+            \draw [fill=ffqqqq] (-1.3660254037844384,0.36602540378443893) circle (2.0pt);
+            \draw[color=ffqqqq] (-1.2843999303077276,0.55049541344254) node {$G$};
+            \draw [fill=ffqqqq] (-0.13397459621556085,2.232050807568877) circle (2.0pt);
+            \draw[color=ffqqqq] (-0.05311936879833197,2.4198031750068023) node {$H$};
+            \draw [fill=ffqqqq] (-1.5,2.598076211353316) circle (2.0pt);
+            \draw[color=ffqqqq] (-1.4187214461087527,2.7779938838095353) node {$I$};
+            \draw [fill=ffqqqq] (-1.1339745962155603,3.9641016151377544) circle (2.0pt);
+            \draw[color=ffqqqq] (-1.0605307373060193,4.143595961119955) node {$J$};
+            \draw [fill=ffqqqq] (-4.598076211353315,1.9641016151377555) circle (2.0pt);
+            \draw[color=ffqqqq] (-4.519309769182413,2.151160143404753) node {$K$};
+            \end{scriptsize}
+            \end{axis}
+        \end{tikzpicture}
+    \end{minipage}
+\end{frame}
+
+\subsubsection{Zkosení}
+\begin{frame}{Horizontální zkosení}
+    Afinní matice \textbf{horizontálního} zkosení o úhel $\varphi$:
+    \[\mathcal{SK}(\varphi)=\left(\begin{matrix}
+        1 & \tg{\varphi} & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 1
+    \end{matrix}\right).\]
+\end{frame}
+
+\begin{frame}{Příklad horizontálního zkosení}
+    \begin{minipage}{0.4\textwidth}
+        Horizontální zkosení o úhel $\alpha=\pi/6$.
+        \[\mathcal{SK}\left(\pi/6\right)=\left(\begin{matrix}
+            1 & \tg{\pi/6} & 0\\
+            0 & 1 & 0\\
+            0 & 0 & 1
+        \end{matrix}\right).\]
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.58\textwidth}
+        \newcommand{\degre}{\ensuremath{^\circ}}
+        \definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+        \definecolor{ffqqqq}{rgb}{1.,0.,0.}
+        \definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+        \definecolor{ttttff}{rgb}{0.2,0.2,1.}
+        \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=3.0cm,y=3.0cm]
+            \begin{axis}[
+            x=3.0cm,y=3.0cm,
+            axis lines=middle,
+            ymajorgrids=false,
+            xmajorgrids=false,
+            xmin=-0.1,
+            xmax=1.7,
+            ymin=-0.1,
+            ymax=1.1,
+            xtick={-0.0,0.5,...,1.5},
+            ytick={-0.0,0.5,...,1.0},]
+            \clip(-0.1,-0.1) rectangle (1.7,1.1);
+            \fill[line width=2.pt,color=ttttff,fill=ttttff,fill opacity=0.10000000149011612] (0.,0.) -- (1.,0.) -- (1.,1.) -- (0.,1.) -- cycle;
+            \fill[line width=2.pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (0.,0.) -- (1.,0.) -- (1.5773502691896257,1.) -- (0.5773502691896257,1.) -- cycle;
+            \draw[line width=4.pt] (-6.46851902669086,5.484523807404682) -- (-3.774838420996452,5.484523807404682);
+            \draw [line width=2.pt,color=ttttff] (0.,0.)-- (1.,0.);
+            \draw [line width=2.pt,color=ttttff] (1.,0.)-- (1.,1.);
+            \draw [line width=2.pt,color=ttttff] (1.,1.)-- (0.,1.);
+            \draw [line width=2.pt,color=ttttff] (0.,1.)-- (0.,0.);
+            \draw [line width=2.pt,color=ffqqqq] (0.,0.)-- (1.,0.);
+            \draw [line width=2.pt,color=ffqqqq] (1.,0.)-- (1.5773502691896257,1.);
+            \draw [line width=2.pt,color=ffqqqq] (1.5773502691896257,1.)-- (0.5773502691896257,1.);
+            \draw [line width=2.pt,color=ffqqqq] (0.5773502691896257,1.)-- (0.,0.);
+            \begin{scriptsize}
+            \draw [fill=black] (-4.8972053400357884,5.484523807404682) circle (2.5pt);
+            \draw[color=black] (-4.780479180455697,5.713486658888706) node {$phi = 30$};
+            \end{scriptsize}
+            \end{axis}
+        \end{tikzpicture}
+    \end{minipage}
+\end{frame}
+
+\begin{frame}{Vertikální zkosení}
+    Pro \textbf{vertikální} zkosení bude afinní matice vypadat analogicky:
+    \[\mathcal{SK}(\varphi)=\left(\begin{matrix}
+        1 & 0 & 0\\
+        \tg{\varphi} & 1 & 0\\
+        0 & 0 & 1
+    \end{matrix}\right).\]
+\end{frame}
+
+\subsection{Skládání afinních zobrazení}
+\begin{frame}[t]{Skládání afinních zobrazení}
+    \only<2->{
+        \begin{block}{Matice složeného zobrazení}
+            Jsou-li $\mapping{f}{U}{V}$ a $\mapping{g}{V}{W}$ afinní zobrazení, kde matice přislušných homomorfismů jsou po řadě $A,B$, pak matice homomorfismu složeného afinního zobrazení $f\circ g$ je $AB$.
+        \end{block}
+    }
+    \only<3->{
+        O tom se lze přesvědčit:
+    \[(f\circ g)(x)=f(g(x))=A\overbrace{(Bx+v)}^{g(x)}+u=(AB)x+(Av+u).\]
+    }
+    \only<4->{
+        Pro \textbf{afinní} matice platí totéž $\implies$ maticí složeného afinního zobrazení je \textbf{součin afinních matic}.
+    }
+\end{frame}
+
+\begin{frame}[t]{Příklad složeného zobrazení}
+    \begin{itemize}
+        \item Mějme afinní zobrazení $f,g$ po řadě s afinními maticemi $\mathcal{T}(\T{(3,2)})$, $\mathcal{R}(\pi/2)$ $\implies$ \textbf{translace} a \textbf{rotace}.
+        \item Matice zobrazení $f\circ g$:
+        \begin{align*}
+            \mathcal{T}(\T{(3,2)})\cdot\mathcal{R}\left(\dfrac{\pi}{2}\right)&=\left(\begin{matrix}
+                1 & 0 & 3\\
+                0 & 1 & 2\\
+                0 & 0 & 1
+            \end{matrix}\right)\cdot\left(\begin{matrix}
+                \cos(\pi/2) & -\sin(\pi/2) & 0\\
+                \sin(\pi/2) & \cos(\pi/2) & 0\\
+                0 & 0 & 1
+            \end{matrix}\right)\\
+            &=\left(\begin{matrix}
+                0 & -1 & 3\\
+                1 & 0 & 2\\
+                0 & 0 & 1
+            \end{matrix}\right)
+        \end{align*}
+    \end{itemize}
 \end{frame}
