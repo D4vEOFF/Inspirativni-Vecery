@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformace pomocí matic</title>
+    <style>
+        :root {
+            --page-color: #663399;
+            --white: #ffffff;
+            --grey: #ebebeb;
+            --black: #000000;
+            --border: #8c8c8c;
+            --obsah-bg: #f8f9fa;
+            --dark-grey: #666666;
+        }
+        pre {
+            background: var(--grey);
+            border: 1px solid #ddd;
+            border-left: 3px solid var(--page-color);
+            margin-bottom: 1.6em;
+            max-width: 100%;
+            display: grid;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        code {
+            font-family: monospace;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--dark-grey);
+            counter-increment: line;
+        }
+        code:before {
+            content: counter(line);
+            display: inline-block;
+            text-align: right;
+            width: 1.5em;
+            border-right: 1px solid var(--dark-grey);
+            padding: 0 0.5em;
+            margin-right: 0.5em;
+            color: var(--dark-grey);
+        }
+    </style>
+</head>
+<body>
+    <h1>Transformace pomocí matic</h1>
+    <section>
+        <h2>Translace</h2>
+        <math>
+            <mrow>
+                <mo>A</mo>
+                <mo>=</mo> 
+                <mo>(</mo>
+                <mtable>
+                    <mtr>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>50</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>20</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                    </mtr>
+                </mtable>
+                <mo>)</mo>
+            </mrow>
+        </math> 
+
+        <pre>
+            <code>&lt;svg width="200" height="100"&gt;</code>
+            <code>    &lt;rect width="100" height="50" fill="black"/&gt;</code>
+            <code>    &lt;rect width="100" height="50" fill="red" transform="matrix(1,0,0,1,50,20)"/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+        <svg width="200" height="100">
+            <rect width="100" height="50" fill="black"/>
+            <rect width="100" height="50" fill="red" transform="matrix(1,0,0,1,50,20)"/>
+        </svg>
+    </section>
+    
+    <section>
+        <h2>Škálování</h2>
+        <math>
+            <mrow>
+                <mo>A</mo>
+                <mo>=</mo> 
+                <mo>(</mo>
+                <mtable>
+                    <mtr>
+                        <mtd><mn>2</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1,5</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                    </mtr>
+                </mtable>
+                <mo>)</mo>
+            </mrow>
+        </math> 
+        <pre>
+            <code>&lt;svg width="200" height="100"&gt;</code>
+            <code>    &lt;rect width="50" height="50" fill="red" transform="matrix(2,0,0,1.5,0,0)"/&gt;</code>
+            <code>    &lt;rect width="50" height="50" fill="black"/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+        <svg width="200" height="100">
+            <rect width="50" height="50" fill="red" transform="matrix(2,0,0,1.5,0,0)"/>
+            <rect width="50" height="50" fill="black"/>
+        </svg>
+        <h3>Složení posunutí a škálování</h3>
+        <math>
+            <mrow>
+                <mo>A</mo>
+                <mo>=</mo> 
+                <mo>(</mo>
+                <mtable>
+                    <mtr>
+                        <mtd><mn>2</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1,5</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                    </mtr>
+                </mtable>
+                <mo>)</mo>
+                <mo>&centerdot;</mo>
+                <mo>(</mo>
+                <mtable>
+                    <mtr>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>50</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>20</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                    </mtr>
+                </mtable>
+                <mo>)</mo>
+            </mrow>
+        </math> 
+        <pre>
+            <code>&lt;svg width="200" height="100"&gt;</code>
+            <code>    &lt;rect width="50" height="50" fill="red" transform="matrix(2,0,0,1.5,50,20)"/&gt;</code>
+            <code>    &lt;rect width="50" height="50" fill="black"/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+        <svg width="200" height="100">
+            <rect width="50" height="50" fill="red" transform="matrix(2,0,0,1.5,50,20)"/>
+            <rect width="50" height="50" fill="black"/>
+        </svg>
+    </section>
+
+    <section>
+        <h2>Otočení</h2>
+        <math>
+            <mrow>
+                <mo>A</mo>
+                <mo>=</mo> 
+                <mo>(</mo>
+                <mtable>
+                    <mtr>
+                        <mtd><mi>cos</mi><mo>(</mo><mn>30°</mn><mo>)</mo></mtd>
+                        <mtd><mo>&minus;</mo><mi>sin</mi><mo>(</mo><mn>30°</mn><mo>)</mo></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mi>sin</mi><mo>(</mo><mn>30°</mn><mo>)</mo></mtd>
+                        <mtd><mi>cos</mi><mo>(</mo><mn>30°</mn><mo>)</mo></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                    </mtr>
+                </mtable>
+                <mo>)</mo>
+            </mrow>
+        </math> 
+        <pre>
+            <code>&lt;svg width="200" height="100"&gt;</code>
+            <code>    &lt;rect width="50" height="50" fill="black"/&gt;</code>
+            <code>    &lt;rect width="50" height="50" fill="red" transform="matrix(0.8660,0.5,-0.5,0.8660,0,0)"/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+        <svg width="200" height="100">
+            <rect width="50" height="50" fill="black"/>
+            <rect width="50" height="50" fill="red" transform="matrix(0.8660,0.5,-0.5,0.8660,0,0)"/>
+        </svg>
+        <h3>Složení posunutí a otočení</h3>
+        <math>
+            <mrow>
+                <mo>A</mo>
+                <mo>=</mo> 
+                <mo>(</mo>
+                <mtable>
+                    <mtr>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>25</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>25</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                    </mtr>
+                </mtable>
+                <mo>)</mo>
+                <mo>&centerdot;</mo>
+                <mo>(</mo>
+                <mtable>
+                    <mtr>
+                        <mtd><mi>cos</mi><mo>(</mo><mn>30°</mn><mo>)</mo></mtd>
+                        <mtd><mo>&minus;</mo><mi>sin</mi><mo>(</mo><mn>30°</mn><mo>)</mo></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mi>sin</mi><mo>(</mo><mn>30°</mn><mo>)</mo></mtd>
+                        <mtd><mi>cos</mi><mo>(</mo><mn>30°</mn><mo>)</mo></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                    </mtr>
+                </mtable>
+                <mo>)</mo>
+            </mrow>
+        </math> 
+        <pre>
+            <code>&lt;svg width="200" height="100"&gt;</code>
+            <code>    &lt;rect width="50" height="50" fill="black"/&gt;</code>
+            <code>    &lt;rect width="50" height="50" fill="red" transform="matrix(0.8660,0.5,-0.5,0.8660,0,0)"/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+        <svg width="200" height="100">
+            <rect width="50" height="50" fill="black"/>
+            <rect width="50" height="50" fill="red" transform="matrix(0.8660,0.5,-0.5,0.8660,25,25)"/>
+        </svg>
+        <h3>Otázka k zamyšlení</h3>
+        Jak otočit objekt okolo libovolně zvoleného bodu?
+    </section>
+
+    <section>
+        <h2>Zkosení</h2>
+        <math>
+            <mrow>
+                <mo>A</mo>
+                <mo>=</mo> 
+                <mo>(</mo>
+                <mtable>
+                    <mtr>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mi>tg</mi><mo>(</mo><mn>45°</mn><mo>)</mo></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                    </mtr>
+                </mtable>
+                <mo>)</mo>
+            </mrow>
+        </math> 
+        <pre>
+            <code>&lt;svg width="200" height="100"&gt;</code>
+            <code>    &lt;rect width="50" height="50" fill="black"/&gt;</code>
+            <code>    &lt;rect width="50" height="50" fill="red" transform="matrix(1,0,1,1,0,0)"/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+        <svg width="200" height="100">
+            <rect width="50" height="50" fill="black"/>
+            <rect width="50" height="50" fill="red" transform="matrix(1,0,1,1,0,0)"/>
+        </svg>
+        <hr style="margin-bottom: 50px;">
+        <math>
+            <mrow>
+                <mo>A</mo>
+                <mo>=</mo> 
+                <mo>(</mo>
+                <mtable>
+                    <mtr>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mi>tg</mi><mo>(</mo><mn>30°</mn><mo>)</mo></mtd>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                    </mtr>
+                </mtable>
+                <mo>)</mo>
+            </mrow>
+        </math> 
+        <pre>
+            <code>&lt;svg width="200" height="100"&gt;</code>
+            <code>    &lt;rect width="50" height="50" fill="black"/&gt;</code>
+            <code>    &lt;rect width="50" height="50" fill="red" transform="matrix(1,0.5773,0,1,0,0)"/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>    
+        <svg width="200" height="100">
+            <rect width="50" height="50" fill="black"/>
+            <rect width="50" height="50" fill="red" transform="matrix(1,0.5773,0,1,0,0)"/>
+        </svg>
+
+
+
+        <h3>Složení dvou předchozích zkosení</h3>
+        <math>
+            <mrow>
+                <mo>A</mo>
+                <mo>=</mo> 
+                <mo>(</mo>
+                <mtable>
+                    <mtr>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mi>tg</mi><mo>(</mo><mn>45°</mn><mo>)</mo></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                    </mtr>
+                </mtable>
+                <mo>)</mo>
+                <mo>&centerdot;</mo>
+                <mo>(</mo>
+                <mtable>
+                    <mtr>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mi>tg</mi><mo>(</mo><mn>30°</mn><mo>)</mo></mtd>
+                        <mtd><mn>1</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                    </mtr>
+                    
+                    <mtr>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>0</mn></mtd>
+                        <mtd><mn>1</mn></mtd>
+                    </mtr>
+                </mtable>
+                <mo>)</mo>
+            </mrow>
+        </math> 
+        <pre>
+            <code>&lt;svg width="200" height="100"&gt;</code>
+            <code>    &lt;rect width="50" height="50" fill="black"/&gt;</code>
+            <code>    &lt;rect width="50" height="50" fill="red" transform="matrix(1,0.5773,1,1.5773,0,0)"/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+        <svg width="200" height="100">
+            <rect width="50" height="50" fill="black"/>
+            <rect width="50" height="50" fill="red" transform="matrix(1,0.5773,1,1.5773,0,0)"/>
+        </svg>
+
+    </section>
+
+
+</body>
+</html>

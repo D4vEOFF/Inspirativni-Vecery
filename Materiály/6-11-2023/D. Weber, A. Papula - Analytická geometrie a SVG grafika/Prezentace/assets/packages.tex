@@ -33,3 +33,18 @@
 \usepackage{multicol}
 
 \usepackage{listings}                   % Úryvky z kódu
+\definecolor{maroon}{rgb}{0.5,0,0}
+\definecolor{forestgreen}{rgb}{0.13, 0.55, 0.13}
+
+\lstdefinelanguage{XML}
+{
+  basicstyle=\ttfamily,
+  morestring=[s]{"}{"},
+  morecomment=[s]{?}{?},
+  morecomment=[s]{!--}{--},
+  commentstyle=\color{forestgreen},
+  moredelim=[s][\color{black}]{>}{<},
+  moredelim=[s][\color{red}]{\ }{=},
+  stringstyle=\color{blue},
+  identifierstyle=\color{maroon}
+}
