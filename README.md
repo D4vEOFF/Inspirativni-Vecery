@@ -1,4 +1,4 @@
-# Inspirativni-Vecery
+# Inspirativní večery
 Přednášky, resp. příspěvky, z minikonference "Inspirativní večery".
 
 ## Rozcestník
