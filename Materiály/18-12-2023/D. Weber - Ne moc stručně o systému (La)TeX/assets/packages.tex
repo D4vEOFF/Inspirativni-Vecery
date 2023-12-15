@@ -1,0 +1,50 @@
+\usepackage[czech]{babel}				% Jazyk
+%\usepackage[a-2u]{pdfx}				% Kopírování z pdfka
+\usepackage{tikz}						% Schémata automatů
+\usetikzlibrary{arrows}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usepackage[utf8]{inputenc}
+% \usepackage{textcomp}
+\usepackage{hyperref}
+
+%%% FONTS
+% \usefonttheme{serif}
+% \usepackage{lmodern}
+\usepackage{helvet}
+\usefonttheme[onlymath]{serif}
+
+\hypersetup{%
+    pdfencoding=auto,
+    pdfauthor={\insertauthor},
+    pdftitle={\insertsubtitle}
+}
+\usepackage{csquotes}					% české uvozovky
+\usepackage{enumerate}					% enumerate environment
+\usepackage{indentfirst}
+\usepackage{mathtools}
+\usepackage{pifont}
+\usepackage{soul}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{subfig}
+\usepackage{multicol}
+
+\usepackage{listings}                   % Úryvky z kódu
+\definecolor{maroon}{rgb}{0.5,0,0}
+\definecolor{forestgreen}{rgb}{0.13, 0.55, 0.13}
+
+\lstdefinelanguage{XML}
+{
+  basicstyle=\ttfamily,
+  morestring=[s]{"}{"},
+  morecomment=[s]{?}{?},
+  morecomment=[s]{!--}{--},
+  commentstyle=\color{forestgreen},
+  moredelim=[s][\color{black}]{>}{<},
+  moredelim=[s][\color{red}]{\ }{=},
+  stringstyle=\color{blue},
+  identifierstyle=\color{maroon}
+}

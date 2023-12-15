@@ -1,0 +1,35 @@
+% Colors
+\definecolor{themecolor}{HTML}{BFBFBF}
+\definecolor{authorfooterbg}{HTML}{154519}
+\definecolor{titlefooterbg}{HTML}{8ABA8D}
+\definecolor{titlefooterfg}{HTML}{CC0000}
+\definecolor{datefooterbg}{HTML}{E3E3E3}
+
+% Beamer theme
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+% \useoutertheme[subsection=false]{miniframes}
+
+\usecolortheme[named=themecolor]{structure}
+\setbeamertemplate{frame numbering}[fraction]
+\setbeamertemplate{navigation symbols}{}
+\setbeamercovered{transparent}
+
+% Header/footer
+\setbeamercolor{author in head/foot}{bg=authorfooterbg,fg=white}
+\setbeamercolor{title in head/foot}{bg=titlefooterbg,fg=titlefooterfg}
+\setbeamercolor{date in head/foot}{bg=datefooterbg,fg=black}
+\setbeamercolor{title}{bg=datefooterbg}
+\setbeamercolor{frametitle}{bg=datefooterbg}
+% \setbeamercolor{section in head/foot}{bg=red,fg=cyan}
+% \setbeamercolor{subsection in head/foot}{bg=blue,fg=yellow}
+
+% Table of contents
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{subsection in toc}{fg=red}
+\setbeamercolor{section number projected}{fg=black}
+
+% Blocks
+\setbeamertemplate{blocks}[default]
+\setbeamercolor{block title}{bg=blue, fg=white}
+\setbeamertemplate{blocks}[rounded][shadow=false]

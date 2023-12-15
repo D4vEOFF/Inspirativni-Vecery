@@ -1,0 +1,218 @@
+\documentclass[11pt,aspectratio=169]{beamer}
+
+% Assets
+\input{assets/packages.tex}
+\input{assets/macros.tex}
+\input{assets/theme.tex}
+
+% Title page
+\input{components/titlepage.tex}
+
+\begin{document}
+
+    % Title page
+    {
+        \setbeamertemplate{footline}{}
+        \maketitle
+    }
+    \addtocounter{framenumber}{-1}
+
+    % Table of contents
+    \begin{frame}[t]{Obsah}
+        \tableofcontents
+    \end{frame}
+
+    \section{Pravidla dobrého návrhu}
+    \subsection{Fáze efektivní tvorby dokumentu}
+    \begin{frame}[t]{Pravidla dobrého návrhu}
+        \onslide<2->{Fáze efektivní tvorby dokumentu většího rozsahu:}
+        \onslide<3->{
+            \begin{itemize}
+                \onslide<3->{\item \emph{Značkování} (struktura dokumentu)}
+                \onslide<4->{\item \emph{Návrh} (formát papíru, okraje, písma, řádkování, \dots)}
+                \onslide<5->{
+                    \begin{itemize}
+                        \item V podstatě přiřazujeme vizuální význam značkám (sémantiku)
+                    \end{itemize}
+                }
+                \onslide<6->{\item \emph{Sazba} (``nalití'' obsahu do vyhrazených chlívků v dokumentu za dodržení typografických pravidel)}
+                \onslide<7->{\item \emph{Korektura} (popř. se vracíme zpět k sazbě)}
+                \onslide<8->{\item \emph{Tisk/publikace}}
+            \end{itemize}
+        }
+    \end{frame}
+    
+    \subsection{Ukázka značkování}
+    \begin{frame}[fragile]{Značkování}{v jazyce \textbf{Markdown}}
+        \begin{verbatim}
+# Nadpis 1
+
+## Nadpis 2
+
+### Nadpis 3
+
+Tohle je *kurzíva*.
+
+Toto je **tučný** text.
+
+- Seznam
+- Položka 1
+- Položka 2
+        \end{verbatim}
+    \end{frame}
+
+    \section{Sazba počítačem}
+    \begin{frame}[t]{Sazba počítačem}
+        \only<2-6>{
+            \only<2-6>{
+                \begin{itemize}
+                    \only<2->{\item Dnes tvoří dokumenty skoro každý}
+                    \only<3->{\item $\implies$ Software sazbu značně zjednodušil}
+                    \only<4->{\item Prakticky odpadla nutnost značkovat}
+                    \only<5->{\item WISIWYG $\times$ WISIWYM}
+                    \only<6->{
+                        \begin{itemize}
+                            \item \emph{What You See Is What You \textbf{Get}}
+                            \item \emph{What You See Is What You \textbf{Mean}}
+                        \end{itemize}
+                    }
+                \end{itemize}
+            }
+        }
+        \only<7>{
+            \begin{figure}
+                \centering
+                \includegraphics[scale=.4]{image/ViewsIceberg.pdf}
+            \end{figure}
+        }
+    \end{frame}
+
+    \section{Historie \TeX u v kostce}
+    \begin{frame}[t]{Trošku do historie\dots}
+        \only<2->{
+            \begin{itemize}
+                \only<2->{\item Systém \TeX{} vznikl v 70. letech, kdy \emph{Donald E. Knuth} (USA) byl zklamán z kvality tehdejší sazby jeho skript (chyby ve vzorcích, typografie).}
+                \only<3->{\item V roce 1977 přichází s vlastním sázecím systémem (sepisuje základní funkce)}
+                \only<4->{\item O rok později (1978) vychází první verze systému \TeX{}.}
+            \end{itemize}
+        }
+    \end{frame}
+    \begin{frame}[t]{Trochu k vývoji \TeX u\dots}
+        \only<2->{
+            \begin{itemize}
+                \only<2->{\item 1978 -- první verze systém \TeX}
+                \only<3->{
+                    \begin{itemize}
+                        \item Obsahoval cca 300 základních příkazů (dosti složité programování $\impliedby$ low-level)
+                        \item Příkazy typu \emph{``skoč doprava/doleva o x pozic'', vypiš posloupnost znaků, změň písmo, \dots}
+                        \item Pro běžného uživatele téměř nepoužitelný
+                    \end{itemize}
+                }
+                \only<4->{\item 1987 -- \TeX{} v dnešní podobě (od té doby nezměněn)}
+                \only<5->{\item Z důvodu uživatelské nepřivětivosti vzniká plain\TeX
+                \begin{itemize}
+                    \item Obsahuje cca 900 příkazů
+                \end{itemize}}
+                \only<6->{\item Nejvíce se však podařilo protlačit systém šírší veřejnosti \emph{Laslie Lamportovi}, který uvedl tzv. \LaTeX{} (rok 1985)}
+                \only<7->{
+                    \begin{itemize}
+                        \item Balíček maker ke standardnímu \TeX u.
+                        \item Uživatel se více mohl soustředit na obsah $\implies$ formu zajišťují předchystaná makra.
+                    \end{itemize}
+                }
+            \end{itemize}
+        }
+    \end{frame}
+
+    \section{Specifika \TeX u}
+
+    \subsection{Co je \TeX}
+    \begin{frame}[t]{Co je \TeX}
+        \begin{itemize}
+            \item Sázecí systém
+            \item Programovatelný (každé makro si lze přizpůsobit)
+            \item Dávkový: \emph{textový soubor $\rightarrow$ grafický výstup}
+            \item Portabilní (nezávislý na verzi souboru)
+        \end{itemize}
+    \end{frame}
+
+    \subsection{Co není \TeX}
+    \begin{frame}[t]{Co naopak \TeX{} není}
+        \only<2->{
+            \begin{itemize}
+                \only<2->{\item Editor}
+                \only<3->{\item Program na úpravu grafiky}
+                \only<4->{
+                    \begin{itemize}
+                        \item Existuje program \emph{Ipe}, který je plně kompatibilní se sazbou v \TeX uvedl
+                    \end{itemize}
+                }
+                \only<5->{\item WISIWYG}
+                \only<6->{\item rychle naučitelný}
+            \end{itemize}
+        }
+        \only<6->{
+            \begin{figure}
+                \centering
+                \includegraphics[scale=.4]{image/fig_word-vs-latex.png}
+            \end{figure}
+        }
+    \end{frame}
+
+    \subsection{Ukázka}
+    \begin{frame}[fragile]{Ukázka \TeX ového kódu}
+        \begin{verbatim}
+\documentclass{article}
+\begin{document}
+
+\title{Dokument v LaTeXu}
+\author{David Weber}
+\date{\today}
+\maketitle
+
+\section{Úvod}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit
+
+\subsection{První podsekce}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit
+
+\end{document}            
+        \end{verbatim}
+    \end{frame}
+
+    \begin{frame}{Výsledek\dots}
+        \begin{figure}
+            \centering
+            \includegraphics[scale=.5]{image/ukazka_latex.png}
+        \end{figure}
+    \end{frame}
+
+    \section{Porovnání \LaTeX u a Wordu}
+    \begin{frame}{Pokud o porovnání \LaTeX u a Wordu}
+        \only<2->{
+            \begin{itemize}
+                \only<2->{\item Není WISIWYG}
+                \only<3->{\item Z počátku trvá déle se \LaTeX{} naučit}
+                \only<4->{\item Složitější instalace}
+                \only<5->{
+                    \begin{itemize}
+                        \item Existují však různé online nástroje pro práci s \LaTeX em, např. \emph{Overleaf}
+                    \end{itemize}
+                }
+                \only<6->{\item Kvalitnější sazba matematických a jiných symbolů}   
+                \only<7->{\item Nezávislý na verzi}
+                \only<8->{\item \LaTeX{} nutí částečně uživatele značkovat}
+                \only<9->{\item Plovoucí obrázky a tabulky}
+            \end{itemize}
+        }
+        \only<10->{
+            \begin{itemize}
+                \item Pro opakované prvky lze zavést vlastní makro
+                \item Velké množství dostupných extérních balíčků
+                \item Cena
+                \item Možnost
+            \end{itemize}
+        }
+    \end{frame}
+
+\end{document}
