@@ -32,7 +32,7 @@
                 \onslide<4->{\item \emph{Návrh} (formát papíru, okraje, písma, řádkování, \dots)}
                 \onslide<5->{
                     \begin{itemize}
-                        \item V podstatě přiřazujeme vizuální význam značkám (sémantiku)
+                        \item V podstatě přiřazujeme vizuální význam (sémantiku) značkám
                     \end{itemize}
                 }
                 \onslide<6->{\item \emph{Sazba} (``nalití'' obsahu do vyhrazených chlívků v dokumentu za dodržení typografických pravidel)}
@@ -171,10 +171,10 @@ Toto je **tučný** text.
 \maketitle
 
 \section{Úvod}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit
+Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 
 \subsection{První podsekce}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit
+Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 
 \end{document}            
         \end{verbatim}
@@ -201,7 +201,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 }
                 \only<6->{\item Kvalitnější sazba matematických a jiných symbolů}   
                 \only<7->{\item Nezávislý na verzi}
-                \only<8->{\item \LaTeX{} nutí částečně uživatele značkovat}
+                \only<8->{\item \LaTeX{} nutí částečně uživatele značkovat (oddělit obsah od formátu)}
                 \only<9->{\item Plovoucí obrázky a tabulky}
             \end{itemize}
         }
@@ -210,7 +210,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 \item Pro opakované prvky lze zavést vlastní makro
                 \item Velké množství dostupných extérních balíčků
                 \item Cena
-                \item Možnost
+            \end{itemize}
+        }
+    \end{frame}
+
+    \section{K čemu se \LaTeX{} hodí}
+    \begin{frame}[t]{K čemu se \LaTeX{} hodí\dots}
+        \only<2->{
+            \begin{itemize}
+                \only<3->{\item Matematická/technická sazba}
+                \only<4->{\item Výzkumné práce, protokoly}
+                \only<5->{\item Závěrečné práce}
+                \only<6->{\item Skripta}
+                \only<7->{\item Prezentace}
+                \only<8->{\item (Automatizované) generování dokumentů}
+                \only<9->{\begin{itemize}
+                    \item Např. testy pro studenty (každá varianta jiné otázky/příklady).
+                \end{itemize}}
             \end{itemize}
         }
     \end{frame}
