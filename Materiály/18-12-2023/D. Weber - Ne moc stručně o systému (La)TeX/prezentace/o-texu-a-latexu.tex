@@ -128,12 +128,14 @@ Toto je **tučný** text.
 
     \subsection{Co je \TeX}
     \begin{frame}[t]{Co je \TeX}
-        \begin{itemize}
-            \item Sázecí systém
-            \item Programovatelný (každé makro si lze přizpůsobit)
-            \item Dávkový: \emph{textový soubor $\rightarrow$ grafický výstup}
-            \item Portabilní (nezávislý na verzi souboru)
-        \end{itemize}
+        \only<2->{
+            \begin{itemize}
+                \only<2->{\item Sázecí systém}
+                \only<3->{\item Programovatelný (každé makro si lze přizpůsobit)}
+                \only<4->{\item Dávkový: \emph{textový soubor $\rightarrow$ grafický výstup}}
+                \only<5->{\item Portabilní (nezávislý na verzi souboru)}
+            \end{itemize}
+        }
     \end{frame}
 
     \subsection{Co není \TeX}
@@ -159,7 +161,7 @@ Toto je **tučný** text.
         }
     \end{frame}
 
-    \subsection{Ukázka}
+    \subsection{Ukázky}
     \begin{frame}[fragile]{Ukázka \TeX ového kódu}
         \begin{verbatim}
 \documentclass{article}
@@ -187,9 +189,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit...
         \end{figure}
     \end{frame}
 
+    \begin{frame}[fragile]{Sazba matematiky}
+        \begin{verbatim}
+\left|\bigcup\limits_{i=1}^{n}X_i\right|=
+\sum_{\emptyset\neq I\subseteq\{1,2,\dots,n\}}(-1)^{|I|-1}
+\left|\bigcap_{i\in I}X_i\right|
+        \end{verbatim}
+    \end{frame}
+
+    \begin{frame}{Výsledek\dots}
+        \[\left|\bigcup\limits_{i=1}^{n}X_i\right|=\sum_{\emptyset\neq I\subseteq\{1,2,\dots,n\}}(-1)^{|I|-1}\left|\bigcap_{i\in I}X_i\right|\]
+    \end{frame}
+
     \section{Porovnání \LaTeX u a Wordu}
-    \begin{frame}{Pokud o porovnání \LaTeX u a Wordu}
-        \only<2->{
+    \begin{frame}[t]{Pokud o porovnání \LaTeX u a Wordu}
+        \only<2-9>{
             \begin{itemize}
                 \only<2->{\item Není WISIWYG}
                 \only<3->{\item Z počátku trvá déle se \LaTeX{} naučit}
@@ -207,9 +221,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit...
         }
         \only<10->{
             \begin{itemize}
-                \item Pro opakované prvky lze zavést vlastní makro
-                \item Velké množství dostupných extérních balíčků
-                \item Cena
+                \only<10->{\item Pro opakované prvky lze zavést vlastní makro}
+                \only<11->{\item Velké množství dostupných extérních balíčků}
+                \only<12->{\item Cena}
             \end{itemize}
         }
     \end{frame}
@@ -218,13 +232,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit...
     \begin{frame}[t]{K čemu se \LaTeX{} hodí\dots}
         \only<2->{
             \begin{itemize}
-                \only<3->{\item Matematická/technická sazba}
-                \only<4->{\item Výzkumné práce, protokoly}
-                \only<5->{\item Závěrečné práce}
-                \only<6->{\item Skripta}
-                \only<7->{\item Prezentace}
-                \only<8->{\item (Automatizované) generování dokumentů}
-                \only<9->{\begin{itemize}
+                \only<2->{\item Matematická/technická sazba}
+                \only<3->{\item Výzkumné práce, protokoly}
+                \only<4->{\item Závěrečné práce}
+                \only<5->{\item Skripta}
+                \only<6->{\item Prezentace}
+                \only<7->{\item (Automatizované) generování dokumentů}
+                \only<8->{\begin{itemize}
                     \item Např. testy pro studenty (každá varianta jiné otázky/příklady).
                 \end{itemize}}
             \end{itemize}
